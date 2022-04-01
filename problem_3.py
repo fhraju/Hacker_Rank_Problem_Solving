@@ -20,19 +20,18 @@ def compareTriplets(a, b):
     alice = []
     bob = []
     total = []
-    for i in a:
-        for j in b:
-            if a[i] > b[j]:
-                alice = alice + 1
-            elif a[i] < b[j]:
-                bob = bob + 1
-            elif a[i] == b[j]:
-                alice = 0
-                bob = 0
+    for i in a,b:
+        if a[i] > b[i]:
+            alice = alice + 1
+        elif a[i] > b[i]:
+            bob = bob + 1
+        elif a[i] == b[i]:
+            alice = 0
+            bob = 0
     total = alice + bob 
     return total       
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     a = list(map(int, input().rstrip().split()))
 
