@@ -6,8 +6,6 @@ import random
 import re
 import sys
 
-from numpy import append
-
 #
 # Complete the 'compareTriplets' function below.
 #
@@ -25,14 +23,14 @@ def compareTriplets(a, b):
     for i in a:
         for j in b:
             if i > j:
-                alice = append(1)
+                alice = alice + [1]
             elif i > j:
-                bob = append(1)
+                bob = bob + [1]
             elif i == j:
-                alice = 0
-                bob = 0
-    total = alice + bob 
-    return total       
+                alice = alice + [0]
+                bob = bob + [0]
+    total = sum(alice) + sum(bob)
+    return total
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
@@ -41,7 +39,6 @@ if __name__ == '__main__':
     b = list(map(int, input().rstrip().split()))
 
     result = compareTriplets(a, b)
-    print(result)
 
     # fptr.write(' '.join(map(str, result)))
     # fptr.write('\n')
